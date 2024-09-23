@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="access_token">No access token found</div>
+</body>
+<script>
+if (document.location.hash && document.location.hash != '') {
+    var parsedHash = new URLSearchParams(window.location.hash.slice(1));
+    if (parsedHash.get('access_token')) {
+        var access_token = parsedHash.get('access_token');
+        document.getElementById('access_token').textContent = `Access Token : ${access_token}`;
+}}
+</script>
+</html>
